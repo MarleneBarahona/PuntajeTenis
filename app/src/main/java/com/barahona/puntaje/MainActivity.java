@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             contador2A = 40;
             punt2A.setText(contador2A+"");
             auxA++;
-        }else if((contador2A == 40) & (contador2B == 30)){
+        }else if((contador2A == 40) & (contador2B != 40)){
             contador1A++;
             contador2A = 0;
             contador2B = 0;
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             contador2B = 40;
             punt2B.setText(contador2B+"");
             auxB++;
-        }else if((contador2A == 30) & (contador2B == 40)){
+        }else if((contador2A != 40) & (contador2B == 40)){
             contador1B++;
             contador2A = 0;
             contador2B = 0;
