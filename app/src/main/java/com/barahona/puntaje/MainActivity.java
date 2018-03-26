@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private int contador1B;
     private TextView punt2B;
     private int contador2B;
+    private int auxA;
+    private int auxB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         contador2A = 0;
         punt2B = findViewById(R.id.puntaje2B);
         contador2B = 0;
+        auxA = 0;
+        auxB = 0;
     }
     public void sumarUnPuntoA(View view){
         contador1A++;
@@ -41,21 +45,36 @@ public class MainActivity extends AppCompatActivity {
         if(contador2A == 0){
             contador2A = 15;
             punt2A.setText(contador2A+"");
+            auxA++;
         }else if(contador2A == 15){
             contador2A = 30;
             punt2A.setText(contador2A+"");
+            auxA++;
         }else if(contador2A == 30){
             contador2A = 40;
             punt2A.setText(contador2A+"");
+            auxA++;
         }else if((contador2A == 40) & (contador2B == 30)){
-            contador2B = 0;
+            contador1A++;
             contador2A = 0;
+            contador2B = 0;
+            punt1A.setText(contador1A+"");
             punt2A.setText(contador2A+"");
             punt2B.setText(contador2B+"");
-            contador1A++;
-            punt1A.setText(contador1A+"");
         }else if((contador2A == 40) & (contador2B == 40)){
-            punt2A.setText("A");
+            if(auxA == 3){
+                punt2A.setText("A");
+                auxA =0;
+            }else{
+                contador1A++;
+                contador2A = 0;
+                contador2B = 0;
+                punt1A.setText(contador1A+"");
+                punt2A.setText(contador2A+"");
+                punt2B.setText(contador2B+"");
+                auxA = 0;
+            }
+            Log.d("Mensaje", "Si entra");
         }
     }
     public void sumarUnPuntoB(View view){
@@ -66,21 +85,35 @@ public class MainActivity extends AppCompatActivity {
         if(contador2B == 0){
             contador2B = 15;
             punt2B.setText(contador2B+"");
+            auxB++;
         }else if(contador2B == 15){
             contador2B = 30;
             punt2B.setText(contador2B+"");
+            auxB++;
         }else if(contador2B == 30){
             contador2B = 40;
             punt2B.setText(contador2B+"");
+            auxB++;
         }else if((contador2A == 30) & (contador2B == 40)){
-            contador2B = 0;
+            contador1B++;
             contador2A = 0;
+            contador2B = 0;
+            punt1B.setText(contador1B+"");
             punt2A.setText(contador2A+"");
             punt2B.setText(contador2B+"");
-            contador1B++;
-            punt1B.setText(contador1B+"");
         }else if((contador2A == 40) & (contador2B == 40)){
-            punt2B.setText("A");
+            if(auxB == 3){
+                punt2B.setText("A");
+                auxB = 0;
+            }else{
+                contador1B++;
+                contador2A = 0;
+                contador2B = 0;
+                punt1B.setText(contador1B+"");
+                punt2A.setText(contador2A+"");
+                punt2B.setText(contador2B+"");
+                auxB = 0;
+            }
         }
     }
     public void reset(View view){
