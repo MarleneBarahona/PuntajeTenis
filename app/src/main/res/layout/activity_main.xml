@@ -65,7 +65,7 @@
             android:text="^"
             android:layout_centerHorizontal="true"
             android:layout_margin="15dp"
-            android:onClick="sumarTresPuntosA"
+            android:onClick="agregarPuntosA"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"/>
 
@@ -133,7 +133,7 @@
             android:text="^"
             android:layout_centerHorizontal="true"
             android:layout_margin="15dp"
-            android:onClick="sumarTresPuntosB"
+            android:onClick="agregarPuntosB"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"/>
     </RelativeLayout>

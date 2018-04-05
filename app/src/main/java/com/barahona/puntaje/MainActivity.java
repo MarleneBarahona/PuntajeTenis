@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         contador1A++;
         punt1A.setText(contador1A+"");
     }
-    public void sumarTresPuntosA(View view){
+    public void agregarPuntosA(View view){
         if(contador2A == 0){
             contador2A = 15;
             punt2A.setText(contador2A+"");
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         contador1B++;
         punt1B.setText(contador1B+"");
     }
-    public void sumarTresPuntosB(View view){
+    public void agregarPuntosB(View view){
         if(contador2B == 0){
             contador2B = 15;
             punt2B.setText(contador2B+"");
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             punt2A.setText(contador2A+"");
             punt2B.setText(contador2B+"");
         }else if((contador2A == 40) & (contador2B == 40)){
-            if(auxB == 3){
+            if(auxB == 3) {
                 punt2B.setText("A");
                 auxB = 0;
             }else{
